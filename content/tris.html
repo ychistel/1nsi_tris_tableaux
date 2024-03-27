@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="fr" data-content_root="" >
+<html lang="fr" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Algorithmes de tri &#8212; NSI</title>
   
@@ -19,38 +18,36 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=bc08d2ed" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
-    <script src="../_static/translations.js"></script>
+    <script src="../_static/documentation_options.js?v=72dce1d2"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/translations.js?v=d99ca74e"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/tris';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="Exercices de tris" href="exercice.html" />
-    <link rel="prev" title="Comment trier un tableau ?" href="activite.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="fr"/>
   </head>
@@ -60,14 +57,13 @@
 
   
   
-  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Passer au contenu principal</a>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
     <i class="fa-solid fa-arrow-up"></i>
-    Back to top
+    Haut de page
   </button>
 
   
@@ -104,11 +100,16 @@
 </form></div>
   </div>
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -136,15 +137,20 @@
     <p class="title logo__title">NSI</p>
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="activite.html">Comment trier un tableau ?</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Algorithmes de tri</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercice.html">Exercices de tris</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tp_mesure_tri.html">Mesure du temps d’exécution</a></li>
-</ul>
+        <div class="sidebar-primary-item">
 
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Recherche" aria-label="Recherche" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Recherche</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
     </div>
 </nav></div>
     </div>
@@ -303,12 +309,12 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section id="algorithmes-de-tri">
-<h1>Algorithmes de tri<a class="headerlink" href="#algorithmes-de-tri" title="Lien permanent vers cette rubrique">#</a></h1>
+<h1>Algorithmes de tri<a class="headerlink" href="#algorithmes-de-tri" title="Link to this heading">#</a></h1>
 <section id="tri-par-selection">
-<h2>Tri par sélection<a class="headerlink" href="#tri-par-selection" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Tri par sélection<a class="headerlink" href="#tri-par-selection" title="Link to this heading">#</a></h2>
 <p>L’algorithme de <strong>tri par sélection</strong> sépare le tableau en deux sous-tableaux.</p>
 <ul class="simple">
 <li><p>Le premier sous tableau contient les valeurs déjà triées; il est vide au départ!</p></li>
@@ -319,7 +325,7 @@ document.write(`
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/tri_selection.svg"><img alt="../_images/tri_selection.svg" src="../_images/tri_selection.svg" width="400" /></a>
 <figcaption>
-<p><span class="caption-text">Tri par sélection d’un tableau de nombres</span><a class="headerlink" href="#id1" title="Lien permanent vers cette image">#</a></p>
+<p><span class="caption-text">Tri par sélection d’un tableau de nombres</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Ainsi, par itération, le sous-tableau non trié diminue jusqu’à être vide et le tableau est entièrement trié.</p>
@@ -357,7 +363,7 @@ tant que i &lt; n:
 </div>
 </section>
 <section id="tri-par-insertion">
-<h2>Tri par insertion<a class="headerlink" href="#tri-par-insertion" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Tri par insertion<a class="headerlink" href="#tri-par-insertion" title="Link to this heading">#</a></h2>
 <p>L’algorithme de <strong>tri par insertion</strong> sépare le tableau en deux sous tableaux.</p>
 <ul class="simple">
 <li><p>Le premier sous-tableau contient les valeurs déjà triées; il contient la première valeur du tableau au début!</p></li>
@@ -391,7 +397,7 @@ tant que i &lt; n:
 </div>
 </section>
 <section id="complexite-des-tris">
-<h2>Complexité des tris<a class="headerlink" href="#complexite-des-tris" title="Lien permanent vers cette rubrique">#</a></h2>
+<h2>Complexité des tris<a class="headerlink" href="#complexite-des-tris" title="Link to this heading">#</a></h2>
 <p>Les tris par selection et par insertion ont la même complexité. On peut la mesurer en comptant le nombre de comparaisons
 effectuées à chaque itération des boucles <code class="docutils literal notranslate"><span class="pre">while</span></code>. Pour les deux algorithmes, on a 2 boucles imbriquées.</p>
 <p>Pour un tableau de dimension <span class="math notranslate nohighlight">\(n\)</span>:</p>
@@ -418,24 +424,6 @@ tris est <strong>quadratique</strong> et se note <span class="math notranslate n
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="activite.html"
-       title="page précédente">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">précédent</p>
-        <p class="prev-next-title">Comment trier un tableau ?</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="exercice.html"
-       title="page suivante">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">suivant</p>
-        <p class="prev-next-title">Exercices de tris</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -444,6 +432,7 @@ tris est <strong>quadratique</strong> et se note <span class="math notranslate n
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -502,8 +491,8 @@ Par Yannick Chistel
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
   <footer class="bd-footer">
   </footer>
