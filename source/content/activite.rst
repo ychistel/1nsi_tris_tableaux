@@ -1,7 +1,7 @@
 Comment trier un tableau ?
 ==========================
 
-Le langage Python possède une méthode de tri pour les listes: la méthode ``sort``. Lorsque les listes contiennent des valeur simples comme des nombres ou des chaines de caractères, l'utilisation de la méthode est simple.
+Le langage Python possède la méthode ``sort`` pour le tri pour des listes. Lorsque les listes contiennent des valeur simples comme des nombres ou des chaines de caractères, l'utilisation de la méthode est simple.
 
 On a vu avec le problème du **sac à dos** que l'utilisation de cette méthode est plus complexe et nécessite l'usage d'une fonction anonyme ``lambda``. Est-il possible de trier un tableau de valeurs sans utiliser la méthode de Python ?
 

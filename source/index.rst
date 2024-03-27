@@ -7,7 +7,7 @@ Les 2 algorithmes de tri sont le **tri par sélection** et le **tri par insertio
 
 .. toctree::
     :maxdepth: 1
-    .. :hidden:
+    :hidden:
 
     content/activite.rst
     content/tris.rst
