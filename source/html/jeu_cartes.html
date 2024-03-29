@@ -1,0 +1,144 @@
+<div id="cardContainer">
+    <!-- Cartes générées dynamiquement -->
+</div>
+
+<script>
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1)); // Génère un index aléatoire entre 0 et i inclus
+            [array[i], array[j]] = [array[j], array[i]]; // Échange les éléments d'index i et j
+        }
+        return array;
+    }
+
+    // Liste des URLs des images de textures pour chaque carte
+    let textures = [
+        '1_pique.png',
+        '2_pique.png',
+        '3_pique.png',
+        '4_pique.png',
+        '5_pique.png',
+        '6_pique.png',
+        '7_pique.png',
+        '8_pique.png',
+        '9_pique.png',
+        '10_pique.png',
+        'valet_pique.png',
+        'dame_pique.png',
+        'roi_pique.png',
+        '1_carreau.png',
+        '2_carreau.png',
+        '3_carreau.png',
+        '4_carreau.png',
+        '5_carreau.png',
+        '6_carreau.png',
+        '7_carreau.png',
+        '8_carreau.png',
+        '9_carreau.png',
+        '10_carreau.png',
+        'valet_carreau.png',
+        'dame_carreau.png',
+        'roi_carreau.png',
+        '1_coeur.png',
+        '2_coeur.png',
+        '3_coeur.png',
+        '4_coeur.png',
+        '5_coeur.png',
+        '6_coeur.png',
+        '7_coeur.png',
+        '8_coeur.png',
+        '9_coeur.png',
+        '10_coeur.png',
+        'valet_coeur.png',
+        'dame_coeur.png',
+        'roi_coeur.png',
+        '1_trefle.png',
+        '2_trefle.png',
+        '3_trefle.png',
+        '4_trefle.png',
+        '5_trefle.png',
+        '6_trefle.png',
+        '7_trefle.png',
+        '8_trefle.png',
+        '9_trefle.png',
+        '10_trefle.png',
+        'valet_trefle.png',
+        'dame_trefle.png',
+        'roi_trefle.png'
+        // Ajoutez autant d'URLs d'images de textures que nécessaire pour les 32 cartes
+    ];
+    shuffleArray(textures);
+    // Nombre de cartes à trier
+    nb_cartes = 8;
+    // Création d'un tableau pour stocker les cartes
+    let cards = [];
+    // Obtenir les limites du conteneur de cartes
+    const containerBounds = document.getElementById('cardContainer').getBoundingClientRect();
+    const containerLeft = containerBounds.left;
+    const containerTop = containerBounds.top;
+    const containerRight = containerBounds.right;
+    const containerBottom = containerBounds.bottom;
+
+    // Générer les cartes
+    for (let i = 0; i < nb_cartes; i++) {
+        let card = document.createElement('div');
+        card.classList.add('card');
+        card.id = 'card-' + (i+1);
+        card.style.backgroundImage = 'url(../_images/' + textures[i] + ')';;
+        card.style.backgroundSize = 'cover';
+        card.style.backgroundPosition = 'center';
+        card.style.left = i*110 + 'px';
+        //card.style.top = 10 + 'px';
+        document.getElementById('cardContainer').appendChild(card);
+        cards.push(card);
+    }
+
+    // Variables pour le déplacement de la carte
+    let activeCard = null;
+    let offsetX, offsetY;
+
+    // Fonction pour commencer le déplacement
+    function startDragging(e) {
+        const containerBounds = document.getElementById('cardContainer').getBoundingClientRect();
+        const containerLeft = containerBounds.left;
+        const containerTop = containerBounds.top;
+        const containerRight = containerBounds.right;
+        const containerBottom = containerBounds.bottom;
+        activeCard = e.target;
+        theCard = document.getElementById(activeCard.id);
+        offsetX = e.clientX + containerLeft - theCard.getBoundingClientRect().left;
+        offsetY = e.clientY +containerTop - theCard.getBoundingClientRect().top;
+    }
+
+    // Fonction pour déplacer la carte
+    function dragCard(e) {
+        if (activeCard){
+            let theCard = document.getElementById(activeCard.id);
+            let theCardStyle = window.getComputedStyle(theCard);
+            let xLeftCard = e.clientX - offsetX;
+            if (xLeftCard < parseInt(theCardStyle.margin) ){
+                xLeftCard = 0;
+            } else if (xLeftCard > (containerRight - containerLeft - (parseInt(theCardStyle.width) + 2*parseInt(theCardStyle.margin)))) {
+                xLeftCard = containerRight - containerLeft - (parseInt(theCardStyle.width) + 2*parseInt(theCardStyle.margin));
+            } 
+            let yTopCard = e.clientY - offsetY;
+            if (yTopCard < parseInt(theCardStyle.margin)){
+                yTopCard = 0;
+            } else if (yTopCard > (containerBottom - containerTop - (parseInt(theCardStyle.height) + 2*parseInt(theCardStyle.margin)) )) {
+                yTopCard = containerBottom - containerTop - (parseInt(theCardStyle.height) + 2*parseInt(theCardStyle.margin));
+            } 
+            theCard.style.left = xLeftCard + 'px';
+            theCard.style.top = yTopCard + 'px';
+        }
+    }
+
+    // Fonction pour arrêter le déplacement
+    function stopDragging() {
+        activeCard = null;
+    }
+
+    // Écouteurs d'événements pour commencer et arrêter le déplacement
+    document.addEventListener('mousedown', startDragging);
+    document.addEventListener('mousemove', dragCard);
+    document.addEventListener('mouseup', stopDragging);
+</script>

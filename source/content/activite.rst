@@ -7,13 +7,15 @@ On a vu avec le problème du **sac à dos** que l'utilisation de cette méthode 
 
 Il existe de nombreux algorithmes de tri de tableaux. Nous allons en étudier 2 en particulier. Mais d'abord, interrogeons-nous sur l'algorithme de tri ?
 
+.. image:: ../html/cartes/1_carreau.png
+   :hidden:
+
 #. Quelles méthodes utilisez-vous pour trier un jeu de cartes ?
 
-   .. image:: ../img/cartes.svg
-      :alt: cartes à jouer
-      :align: center
-      :width: 480
-
+   .. raw:: html
+      :file: ../html/jeu_cartes.html
+      
+      
 #. Donner les différentes étapes nécessaires pour trier les tableaux dans les cas suivants:
 
    a. ``t=[1,3,7,11,8]``
@@ -31,4 +33,4 @@ Il existe de nombreux algorithmes de tri de tableaux. Nous allons en étudier 2 
 
 #. Écrire un algorithme en pseudo-code ou langage naturel mettant en oeuvre la remarque précédente.
 #. Ces algorithmes se terminent-ils dans tous les cas ? Justifier.
-#. Quel est la complexité des 2 algorithmes de tris?
+#. Quelle est la complexité des 2 algorithmes de tris?
